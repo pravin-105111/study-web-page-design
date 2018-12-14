@@ -1,7 +1,8 @@
 import { combineReducers } from 'redux';
+import AddressFormReducer from './address-form-reducer'
 
 const rootReducer = combineReducers({
-  state: (state = {}) => state
+  adress: AddressFormReducer
 });
 
 export default rootReducer;
