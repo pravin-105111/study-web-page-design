@@ -1,20 +1,25 @@
 export const ADDRESS_FORM = 'ADDRESS_FORM';
-export const getValue = value => {
-    console.log('===action==');
+export const getStates = () => {
+
     return {
         type: ADDRESS_FORM,
-        value
+        states: [
+                'Bihar',
+                'West Bengal',
+                'Uttar Pradesh',
+                'Delhi',
+                'Hariyana'
+        ]
     }
 }
 const initialState = {
-    value: ''
+    states: ''
 }
 export default function reducer(state=initialState, action='') {
-    console.log('===type==', action.type);
   switch (action.type) {
       
       case ADDRESS_FORM:
-      return {...state, value:action.value}
+      return {...state, states: action.states}
       default:
       return state;
   }

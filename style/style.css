@@ -1,0 +1,17 @@
+.tab-right {
+    padding-left: 300px
+}
+.tab-left {
+    float: left;
+}
+
+.div-pad-top {
+    padding-top: 50px
+}
+
+.header {
+    color: darkblue;
+    background-color: darkgreen;
+    font-size: 30px;
+    
+}

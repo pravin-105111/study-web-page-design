@@ -1,18 +1,19 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import AddressForm from '../../components/address-form';
-import {getValue} from '../reducers/address-form-reducer';
+import Address from '../../components/address';
+import {getStates} from '../reducers/address-form-reducer';
 
 const mapStateToProps = state => {
     return {
-        value: state.adress.value
+        states: state.adress.states,
+        form: state.form
     }
 }
 
 const mapDispatchToProps = dispatch => ({
-     getValue: value => dispatch(getValue(value))
+    getStates: () => dispatch(getStates())
    
 })
 
-const addressForm = connect(mapStateToProps, mapDispatchToProps)(AddressForm);
+const addressForm = connect(mapStateToProps, mapDispatchToProps)(Address);
 export default addressForm;
