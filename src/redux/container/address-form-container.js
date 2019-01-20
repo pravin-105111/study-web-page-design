@@ -6,7 +6,11 @@ import {getStates} from '../reducers/address-form-reducer';
 const mapStateToProps = state => {
     return {
         states: state.adress.states,
-        form: state.form
+        form: state.form,
+        initialValues: { firstName: 'PK',
+        email: 'aaaa',
+        gender: 'male',
+        state:'Delhi'}
     }
 }
 

@@ -7,10 +7,11 @@ export default class Address extends Component {
         this.props.getStates();
     }
     render() {
-        let { states } = this.props;
+        let { states,initialValues } = this.props;
 
         return <AddressForm 
             states={states}
+            initialValues={initialValues}
             />;
     }
 }

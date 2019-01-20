@@ -4,14 +4,19 @@ import { Field, reduxForm } from 'redux-form';
 class AddressForm extends Component {
 
     render() {
-        let { states, handleSubmit } = this.props;
-
+        let { handleSubmit } = this.props;
+        let initial = this.props.initialValues;
+        console.log('====city====', this.props.initialValues.city);
+        console.log('====initial====', this.props.initialValues);
+         
+           //let {firstName,email} = this.props;
+        
         const renderField = () => {
             return (<select>
-                <option value="select">-select-</option>
-                {states && states.map(state => {
-                    return <option value={state}>{state}</option>;
-                })}
+                {/* <option value="select">-select-</option> */}
+                return {initial && initial.state &&
+                     <option value={initial.state}>{initial.state}</option>
+                }
             </select>)
         }
 
@@ -127,5 +132,10 @@ class AddressForm extends Component {
         );
     }
 }
+AddressForm.defaultProps = {
+    initialValues:{city: 'Patna'}
+};
 
-export default reduxForm({ form: 'simple' })(AddressForm);
+export default reduxForm({
+     form: 'simple',
+ })(AddressForm);

@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import AddressFormContainer from '../redux/container/address-form-container';
+
+import Info from './info';
 
 export default class App extends Component {
   render() {
     return (
-      <AddressFormContainer />
+      <Info />
     );
   }
 }
