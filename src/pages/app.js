@@ -1,11 +1,23 @@
 import React, { Component } from 'react';
 
 import Info from './info';
+import { withRouter } from "react-router-dom";
 
-export default class App extends Component {
+class App extends Component {
+  routeToSingnUp = () => {
+    this.props.history.push('/signup');
+  }
+  routeToSingnIn = () => {
+    this.props.history.push('/login');
+  }
   render() {
     return (
-      <Info />
+      <div>
+        <Info />
+        <button onClick={this.routeToSingnIn}>Singn In</button>
+        <button onClick={this.routeToSingnUp}>SingnUp</button>
+      </div>
     );
   }
 }
+export default withRouter(App);

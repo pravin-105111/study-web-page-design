@@ -1,5 +1,4 @@
-import React, {Component} from 'react';
-import { withRouter } from "react-router-dom";
+import React, { Component } from 'react';
 
 import AddressFormContainer from '../redux/container/address-form-container';
 
@@ -11,20 +10,18 @@ class Info extends Component {
         }
     }
     showEmployeeForm = () => {
-        this.state.showVisibility ? this.setState({showVisibility: false}) :this.setState({showVisibility: true});
-    }
-
-    routeToSingnUp = () => {
-        this.props.history.push('/signup');
+        this.state.showVisibility ? this.setState({ showVisibility: false }) : this.setState({ showVisibility: true });
     }
     render() {
-        return ( 
-       <div>
-           <input type="submit" value="Add Employee Details" onClick={this.showEmployeeForm} />
-           {this.state.showVisibility ? <AddressFormContainer /> : null}
-           <button onClick={this.routeToSingnUp}>SingnUp</button>
-       </div>
+        return (
+            <div>
+                <input type="submit" value="Add Employee Details" onClick={this.showEmployeeForm} />
+                {this.state.showVisibility ? <AddressFormContainer /> : null}
+                <div className="tab-right div-pad-top">
+                    {this.state.showVisibility ? <button type="submit">Submit</button> : ''}
+                </div>
+            </div>
         );
     }
 }
-export default withRouter(Info);
+export default Info;

@@ -125,9 +125,7 @@ class AddressForm extends Component {
                             component={renderField} />
                     </div>
                 </div>
-                <div className="tab-right div-pad-top">
-                    <button type="submit">Submit</button>
-                </div>
+                
             </form>
         );
     }
