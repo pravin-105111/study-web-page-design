@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
+import {createBrowserHistory} from 'history';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import App from './pages/app';
@@ -14,7 +15,7 @@ const store = createStore(reducers, applyMiddleware(thunk));
 
 ReactDOM.render(
   <Provider store={store}>
-    <Router>
+    <Router history={createBrowserHistory}>
       <Switch>
         <Route path='/info' component={App} />
         <Route path='/login' component={Login} />
